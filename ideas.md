@@ -1,4 +1,4 @@
-# Orpheus's Odyssey
+# Orpheus' Odyssey
 Idea:
 - An outfit dress game 
 - New props/outfits for each achievement 
