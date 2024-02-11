@@ -4,6 +4,7 @@ html, body{
 
 body{
     text-align: center;
+    background: linear-gradient(0deg, #FF8C37 0%, #EC3750 100%);
 }
 
 form{
