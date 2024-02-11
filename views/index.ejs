@@ -1,14 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Orpheus Odyssey</title>
-  </head>
-  <body>
-    <h1 style="text-transform: capitalize;">Hi <%= name %></h1>
-    <form action="/logout?_method=DELETE" method="POST">
-      <button type="submit">Log Out</button>
-    </form>
-  </body>
+<script>
+  // Use 'let' for variables that will change.
+  let hat = false;
+  let hoodie = false;
+  let sprig = false;
+  // Ensure this function is defined before it's called
+  function updateHoodieImage() {
+
+    // Make sure the IDs match your target image element
+    let orph = document.getElementById('orph').src;
+
+    if (hat && hoodie && sprig) {
+      document.getElementById('orph').src = "./img/hc hat sprig and hoodie.png";
+    } else if (hat && hoodie && !sprig) {
+      document.getElementById('orph').src = "./img/hc hat and hoodie.png";
+    } else if (hat && !hoodie && sprig) {
+      document.getElementById('orph').src = "./img/hc hat and sprig.png";
+    } else if (!hat && hoodie && sprig) {
+      document.getElementById('orph').src = "./img/hc hoodie and sprig.png";
+    } else if (hat && !hoodie && !sprig) {
+      document.getElementById('orph').src = "./img/hc hat only.png";
+    } else if (!hat && hoodie && !sprig) {
+      document.getElementById('orph').src = "./img/hc hoodie only.png";
+    } else if (!hat && !hoodie && sprig) {
+      document.getElementById('orph').src = "./img/hc sprig only.png";
+    } else {
+      // Handle case where none are selected if needed
+      document.getElementById('orph').src = "./img/hc summit orph.png";
+    }
+  }
+
+  // Wait until the DOM is fully loaded before attaching event listeners
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('hatBtn').addEventListener('click', () => {
+      if (hat == false) {
+        hat = true;
+
+      } else {
+        hat = false;
+      }
+
+      updateHoodieImage();
+    });
+
+    document.getElementById('hoodieBtn').addEventListener('click', () => {
+      if (hoodie == false) {
+        hoodie = true;
+
+      } else {
+        hoodie = false;
+      }
+      updateHoodieImage();
+    });
+
+    document.getElementById('sprigBtn').addEventListener('click', () => {
+      sprig = !sprig
+      updateHoodieImage();
+    });
+  });
+</script>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orpheus' Odyssey</title>
+  <style>
+    @font-face {
+      font-family: 'Phantom Sans';
+      src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff') format('woff'),
+        url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Phantom Sans';
+      src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff') format('woff'),
+        url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff2') format('woff2');
+      font-weight: normal;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Phantom Sans';
+      src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff') format('woff'),
+        url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff2') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f7f7f7;
+    }
+
+    .a-header {
+      color: #FFFF;
+      margin-bottom: 20px;
+      text-align: left;
+      font-family: 'Phantom Sans', sans-serif;
+      /* Apply Phantom Sans font */
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .card {
+      width: 450px;
+      /* Adjusted to take half of the container width */
+      height: 450px;
+      background-color: white;
+      border-radius: 40px;
+      box-shadow: 20px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .text-content {
+      width: 300px;
+      /* Adjusted to take the other half of the container width */
+      padding: 300 100px;
+      /* Padding added for text content */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('./img/bgimg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .dino img {
+      width: 300px;
+      height: 300px;
+      margin-bottom: 8px;
+    }
+
+    .description {
+      font-size: 14px;
+      color: #ffff;
+      font-size: 1.5rem;
+      font-family: 'Phantom Sans', sans-serif;
+      /* Apply Phantom Sans font */
+
+    }
+
+    .requirement {
+      font-size: 12px;
+      color: #888;
+      margin-top: 12px;
+    }
+
+    .c {
+      font-size: 1.5rem;
+      color: #ffff;
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 800;
+      font-family: 'Phantom Sans', sans-serif;
+    }
+
+    .achievement-card {
+      width: 150px;
+      height: 150px;
+      background-color: white;
+      border-radius: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .achievement-grid {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      /* Adjust the gap size as needed */
+      padding: 30px;
+      row-gap: 80px;
+    }
+
+    .achievement-wrapper {
+      margin-bottom: 20px;
+      /* Add space between achievement cards */
+    }
+
+    .card-container {
+      margin-bottom: 20px;
+      /* Add space between card containers if needed */
+    }
+
+    .achievement-image {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 8px;
+    }
+
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      position: relative;
+      /* This makes sure that the absolute positioning is relative to the body */
+    }
+
+    .bottom-left-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 40px;
+      /* Adjust the margin as needed */
+      color: #FFF;
+      /* Adjust color as needed */
+      font-family: 'Phantom Sans', Arial, sans-serif;
+      /* Use the desired font */
+      font-size: 1.5rem;
+      /* Adjust font size as needed */
+    }
+
+    .grid-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      /* Add this if you keep the flex display */
+    }
+
+    button:focus {
+      outline: none;
+    }
+
+    /* Additional style to remove default button styling */
+    button {
+      border: none;
+      background: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Adjustments for button hover to maintain accessibility */
+    button:hover,
+    button:focus {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="text-content">
+    <div class="inventory">
+      <div class="grid-container">
+        <div class="c-grid">
+          <div class="achievement-wrapper">
+            <button id="hatBtn" class="achievement-card">
+              <img src = "./img/hat.png" alt="Cowboy Hat" class="achievement-image">
+            </button>
+          </div>
+          </a>
+        </div>
+        </button>
+        <div class="achievement-wrapper">
+          <button id="hoodieBtn" class="achievement-card">
+            <div class="achievement-card">
+              <img src = "./img/hoodie.png" alt="Hackathon Hoodie" class="achievement-image">
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="text-content">
+    <div class="inventory">
+      <div class="grid-container">
+        <div class="c-grid">
+          <div class="achievement-wrapper">
+            <button id="sprigBtn" class="achievement-card">
+              <div class="achievement-card">
+                <img src = "./img/sprig.png" alt="Sprig" class="achievement-image">
+                
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div>
+    </div>
+    <div class="card-container">
+      <h1 class="a-header">
+        Edit your orpheus
+      </h1>
+      <div class="card">
+        <div class="orpheus">
+          <img id="orph" src="./img/hc summit orph.png" alt="Hackathon Hoodie" , width=400>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <a class="bottom-left-text" href="/achievements">
+    <img src = "./img/library_books_FILL0_wght400_GRAD0_opsz24.png" width=50, height=50>
+  </a>
+</body>
+
 </html>

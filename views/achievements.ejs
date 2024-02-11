@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Achievements Grid</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Phantom Sans';
+      src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff') format('woff'),
+           url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Phantom Sans';
+      src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff') format('woff'),
+           url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff2') format('woff2');
+      font-weight: normal;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Phantom Sans';
+      src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff') format('woff'),
+           url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff2') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('./img/bgimg2.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    a {
+      color: inherit; /* This makes the link color the same as the parent element, or you can set a specific color */
+      text-decoration: none; /* This removes the underline from links */
+    }
+
+    .achievement-card {
+      width: 175px;
+      height: 175px;
+      background-color: white;
+      border-radius: 40px;
+      box-shadow: 20px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 200px;
+      row-gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+    .achievement-header {
+      color: #FFFF;
+      margin-bottom: 20px;
+      text-align: left;
+      font-family: 'Phantom Sans', sans-serif; /* Apply Phantom Sans font */
+    }
+
+    .achievement-image {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 8px;
+    }
+
+    .achievement-title {
+      font-size: 2rem;
+      color: #333;
+      font-family: 'Phantom Sans', sans-serif; /* Apply Phantom Sans font */
+
+    }
+
+    .grid-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+.achievement-description {
+      font-size: 1rem;
+      color: #ffff;
+      text-align: center;
+      padding: 10px;
+      font-family: 'Phantom Sans', sans-serif; /* Apply Phantom Sans font */
+
+    }
+
+    /* Adjustments for the wrapper */
+    .achievement-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <h1 class="achievement-header">ACHIEVEMENTS</h1>
+    <div class="achievement-grid">
+      <div class="achievement-wrapper">
+        <a href="cowboy">
+        <div class="achievement-card">
+          <img src="./img/hat.png" alt="Cowboy Hat" class="achievement-image">
+        </div>
+          </a>
+        <p class="achievement-description">Cowboy Hat</p>
+      </div>
+      
+      <div class="achievement-wrapper">
+        <a href = "hoodie">
+        <div class="achievement-card">
+          <img src="./img/hoodie.png" alt="Hackathon Hoodie" class="achievement-image">
+        </div>
+        </a>
+        <p class="achievement-description">Hackathon Hoodie</p>
+      </div>
+      
+      <div class="achievement-wrapper">
+        <a href = "sprig">
+        <div class="achievement-card">
+          <img src="./img/sprig.png" alt="Sprig" class="achievement-image">
+        </div>
+          </a>
+
+        <p class="achievement-description">Sprig Board</p>
+      </div>
+      <div class="achievement-wrapper">
+        <div class="achievement-card">
+          <div class="achievement-title">???</div>
+        </div>
+        <p class="achievement-description">Mystery</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
