@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <script>
-  // Use 'let' for variables that will change.
   let hat = false;
   let hoodie = false;
   let sprig = false;
-  // Ensure this function is defined before it's called
   function updateHoodieImage() {
 
-    // Make sure the IDs match your target image element
     let orph = document.getElementById('orph').src;
 
+    // way too lazy to do this w an img editing api
     if (hat && hoodie && sprig) {
       document.getElementById('orph').src = "./img/hc hat sprig and hoodie.png";
     } else if (hat && hoodie && !sprig) {
