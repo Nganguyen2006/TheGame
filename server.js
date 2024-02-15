@@ -29,7 +29,7 @@ app.use(passport.session());
 app.use(methodOverride("_method"));
 
 mongoose
-  .connect("mongodb+srv://admin:tech@cluster0.wek6c.mongodb.net/TheGame", {
+  .connect(process.env.DBCON, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
