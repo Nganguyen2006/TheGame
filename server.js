@@ -29,7 +29,7 @@ app.use(passport.session());
 app.use(methodOverride("_method"));
 
 mongoose
-  .connect(process.env.DBCON, {
+  .connect(process.env.DBCONN, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
