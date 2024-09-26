@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+  let hat = false;
+  let hoodie = false;
+  let sprig = false;
+  function updateHoodieImage() {
+
+    let orph = document.getElementById('orph').src;
+
+    // way too lazy to do this w an img editing api
+    if (hat && hoodie && sprig) {
+      document.getElementById('orph').src = "./img/hc hat sprig and hoodie.png";
+    } else if (hat && hoodie && !sprig) {
+      document.getElementById('orph').src = "./img/hc hat and hoodie.png";
+    } else if (hat && !hoodie && sprig) {
+      document.getElementById('orph').src = "./img/hc hat and sprig.png";
+    } else if (!hat && hoodie && sprig) {
+      document.getElementById('orph').src = "./img/hc hoodie and sprig.png";
+    } else if (hat && !hoodie && !sprig) {
+      document.getElementById('orph').src = "./img/hc hat only.png";
+    } else if (!hat && hoodie && !sprig) {
+      document.getElementById('orph').src = "./img/hc hoodie only.png";
+    } else if (!hat && !hoodie && sprig) {
+      document.getElementById('orph').src = "./img/hc sprig only.png";
+    } else {
+      // Handle case where none are selected if needed
+      document.getElementById('orph').src = "./img/hc summit orph.png";
+    }
+  }
+
+  // Wait until the DOM is fully loaded before attaching event listeners
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('hatBtn').addEventListener('click', () => {
+      if (hat == false) {
+        hat = true;
+
+      } else {
+        hat = false;
+      }
+
+      updateHoodieImage();
+    });
+
+    document.getElementById('hoodieBtn').addEventListener('click', () => {
+      if (hoodie == false) {
+        hoodie = true;
+
+      } else {
+        hoodie = false;
+      }
+      updateHoodieImage();
+    });
+
+    document.getElementById('sprigBtn').addEventListener('click', () => {
+      sprig = !sprig
+      updateHoodieImage();
+    });
+  });
+</script>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orpheus' Odyssey</title>
+  <style>
+    @font-face {
+      font-family: 'Phantom Sans';
+      src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff') format('woff'),
+        url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Phantom Sans';
+      src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff') format('woff'),
+        url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff2') format('woff2');
+      font-weight: normal;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Phantom Sans';
+      src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff') format('woff'),
+        url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff2') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f7f7f7;
+    }
+
+    .a-header {
+      color: #FFFF;
+      margin-bottom: 20px;
+      text-align: left;
+      font-family: 'Phantom Sans', sans-serif;
+      /* Apply Phantom Sans font */
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .card {
+      width: 450px;
+      /* Adjusted to take half of the container width */
+      height: 450px;
+      background-color: white;
+      border-radius: 40px;
+      box-shadow: 20px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .text-content {
+      width: 300px;
+      /* Adjusted to take the other half of the container width */
+      padding: 300 100px;
+      /* Padding added for text content */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('./img/bgimg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .dino img {
+      width: 300px;
+      height: 300px;
+      margin-bottom: 8px;
+    }
+
+    .description {
+      font-size: 14px;
+      color: #ffff;
+      font-size: 1.5rem;
+      font-family: 'Phantom Sans', sans-serif;
+      /* Apply Phantom Sans font */
+
+    }
+
+    .requirement {
+      font-size: 12px;
+      color: #888;
+      margin-top: 12px;
+    }
+
+    .c {
+      font-size: 1.5rem;
+      color: #ffff;
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 800;
+      font-family: 'Phantom Sans', sans-serif;
+    }
+
+    .achievement-card {
+      width: 150px;
+      height: 150px;
+      background-color: white;
+      border-radius: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .achievement-grid {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      /* Adjust the gap size as needed */
+      padding: 30px;
+      row-gap: 80px;
+    }
+
+    .achievement-wrapper {
+      margin-bottom: 20px;
+      /* Add space between achievement cards */
+    }
+
+    .card-container {
+      margin-bottom: 20px;
+      /* Add space between card containers if needed */
+    }
+
+    .achievement-image {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 8px;
+    }
+
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      position: relative;
+      /* This makes sure that the absolute positioning is relative to the body */
+    }
+
+    .bottom-left-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 40px;
+      /* Adjust the margin as needed */
+      color: #FFF;
+      /* Adjust color as needed */
+      font-family: 'Phantom Sans', Arial, sans-serif;
+      /* Use the desired font */
+      font-size: 1.5rem;
+      /* Adjust font size as needed */
+    }
+
+    .grid-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      /* Add this if you keep the flex display */
+    }
+
+    button:focus {
+      outline: none;
+    }
+
+    /* Additional style to remove default button styling */
+    button {
+      border: none;
+      background: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Adjustments for button hover to maintain accessibility */
+    button:hover,
+    button:focus {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <a href="/logout">
+    <svg width="150" height="80" viewBox="0 0 283 90" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: fixed;
+    top: 10;
+    left: 10;">
+      <path d="M0 45C0 20.1472 20.1472 0 45 0H238C262.853 0 283 20.1472 283 45C283 69.8528 262.853 90 238 90H45C20.1472 90 0 69.8528 0 45Z" fill="#FF8C37"/>
+      <path d="M46.4034 64V27.6364H50.8068V60.0938H67.7102V64H46.4034ZM85.0398 64.5682C82.5777 64.5682 80.4174 63.9822 78.5589 62.8104C76.7124 61.6385 75.2682 59.9991 74.2266 57.892C73.1967 55.785 72.6818 53.3229 72.6818 50.5057C72.6818 47.6648 73.1967 45.1849 74.2266 43.0661C75.2682 40.9472 76.7124 39.3018 78.5589 38.13C80.4174 36.9581 82.5777 36.3722 85.0398 36.3722C87.5019 36.3722 89.6563 36.9581 91.5028 38.13C93.3613 39.3018 94.8054 40.9472 95.8352 43.0661C96.8769 45.1849 97.3977 47.6648 97.3977 50.5057C97.3977 53.3229 96.8769 55.785 95.8352 57.892C94.8054 59.9991 93.3613 61.6385 91.5028 62.8104C89.6563 63.9822 87.5019 64.5682 85.0398 64.5682ZM85.0398 60.804C86.91 60.804 88.4489 60.3246 89.6562 59.3658C90.8636 58.407 91.7573 57.1463 92.3374 55.5838C92.9174 54.0213 93.2074 52.3286 93.2074 50.5057C93.2074 48.6828 92.9174 46.9841 92.3374 45.4098C91.7573 43.8355 90.8636 42.563 89.6562 41.5923C88.4489 40.6217 86.91 40.1364 85.0398 40.1364C83.1695 40.1364 81.6307 40.6217 80.4233 41.5923C79.2159 42.563 78.3222 43.8355 77.7422 45.4098C77.1622 46.9841 76.8722 48.6828 76.8722 50.5057C76.8722 52.3286 77.1622 54.0213 77.7422 55.5838C78.3222 57.1463 79.2159 58.407 80.4233 59.3658C81.6307 60.3246 83.1695 60.804 85.0398 60.804ZM114.803 74.7955C112.779 74.7955 111.039 74.535 109.583 74.0142C108.127 73.5052 106.913 72.8305 105.943 71.9901C104.984 71.1615 104.22 70.2737 103.652 69.3267L106.99 66.983C107.369 67.4801 107.848 68.0483 108.428 68.6875C109.008 69.3385 109.802 69.9008 110.808 70.3743C111.826 70.8596 113.157 71.1023 114.803 71.1023C117.004 71.1023 118.821 70.5696 120.254 69.5043C121.686 68.4389 122.402 66.7699 122.402 64.4972V58.9574H122.047C121.739 59.4545 121.301 60.0701 120.733 60.804C120.177 61.526 119.372 62.1712 118.318 62.7393C117.277 63.2957 115.868 63.5739 114.093 63.5739C111.891 63.5739 109.914 63.053 108.162 62.0114C106.422 60.9697 105.043 59.4545 104.025 57.4659C103.019 55.4773 102.516 53.0625 102.516 50.2216C102.516 47.428 103.007 44.9955 103.99 42.924C104.972 40.8407 106.339 39.2308 108.091 38.0945C109.843 36.9463 111.867 36.3722 114.164 36.3722C115.939 36.3722 117.348 36.6681 118.389 37.2599C119.443 37.84 120.248 38.5028 120.804 39.2486C121.372 39.9825 121.81 40.5862 122.118 41.0597H122.544V36.7273H126.593V64.7812C126.593 67.125 126.06 69.0308 124.994 70.4986C123.941 71.9782 122.521 73.0613 120.733 73.7479C118.958 74.4463 116.981 74.7955 114.803 74.7955ZM114.661 59.8097C116.342 59.8097 117.762 59.425 118.922 58.6555C120.082 57.8861 120.964 56.7794 121.568 55.3352C122.171 53.8911 122.473 52.1629 122.473 50.1506C122.473 48.1856 122.177 46.4515 121.585 44.9482C120.994 43.4448 120.118 42.267 118.958 41.4148C117.798 40.5625 116.365 40.1364 114.661 40.1364C112.885 40.1364 111.405 40.5862 110.222 41.4858C109.05 42.3854 108.168 43.5928 107.576 45.108C106.996 46.6231 106.706 48.304 106.706 50.1506C106.706 52.0445 107.002 53.7195 107.594 55.1754C108.198 56.6196 109.085 57.7559 110.257 58.5845C111.441 59.4013 112.909 59.8097 114.661 59.8097ZM179.575 45.8182C179.575 49.6534 178.883 52.9678 177.498 55.7614C176.113 58.5549 174.213 60.7093 171.798 62.2244C169.384 63.7396 166.626 64.4972 163.524 64.4972C160.423 64.4972 157.665 63.7396 155.25 62.2244C152.835 60.7093 150.936 58.5549 149.551 55.7614C148.166 52.9678 147.473 49.6534 147.473 45.8182C147.473 41.983 148.166 38.6686 149.551 35.875C150.936 33.0814 152.835 30.9271 155.25 29.4119C157.665 27.8968 160.423 27.1392 163.524 27.1392C166.626 27.1392 169.384 27.8968 171.798 29.4119C174.213 30.9271 176.113 33.0814 177.498 35.875C178.883 38.6686 179.575 41.983 179.575 45.8182ZM175.314 45.8182C175.314 42.6695 174.787 40.0121 173.734 37.8459C172.692 35.6797 171.278 34.0402 169.49 32.9276C167.715 31.8149 165.726 31.2585 163.524 31.2585C161.323 31.2585 159.328 31.8149 157.541 32.9276C155.765 34.0402 154.351 35.6797 153.297 37.8459C152.255 40.0121 151.735 42.6695 151.735 45.8182C151.735 48.9669 152.255 51.6243 153.297 53.7905C154.351 55.9567 155.765 57.5961 157.541 58.7088C159.328 59.8215 161.323 60.3778 163.524 60.3778C165.726 60.3778 167.715 59.8215 169.49 58.7088C171.278 57.5961 172.692 55.9567 173.734 53.7905C174.787 51.6243 175.314 48.9669 175.314 45.8182ZM203.599 52.8494V36.7273H207.789V64H203.599V59.3835H203.315C202.676 60.7685 201.681 61.9463 200.332 62.9169C198.982 63.8757 197.278 64.3551 195.218 64.3551C193.514 64.3551 191.999 63.9822 190.673 63.2365C189.347 62.4789 188.305 61.3426 187.548 59.8274C186.79 58.3004 186.411 56.3769 186.411 54.0568V36.7273H190.602V53.7727C190.602 55.7614 191.158 57.3475 192.271 58.5312C193.395 59.715 194.828 60.3068 196.568 60.3068C197.609 60.3068 198.669 60.0405 199.746 59.5078C200.835 58.9751 201.746 58.1584 202.48 57.0575C203.226 55.9567 203.599 54.554 203.599 52.8494ZM227.325 36.7273V40.2784H213.191V36.7273H227.325ZM217.311 30.1932H221.501V56.1875C221.501 57.3712 221.673 58.259 222.016 58.8509C222.371 59.4309 222.821 59.8215 223.365 60.0227C223.922 60.2121 224.508 60.3068 225.123 60.3068C225.585 60.3068 225.964 60.2831 226.26 60.2358C226.556 60.1766 226.792 60.1293 226.97 60.0938L227.822 63.858C227.538 63.9645 227.141 64.071 226.632 64.1776C226.123 64.2959 225.478 64.3551 224.697 64.3551C223.513 64.3551 222.353 64.1006 221.217 63.5916C220.092 63.0826 219.157 62.3073 218.412 61.2656C217.678 60.224 217.311 58.91 217.311 57.3239V30.1932Z" fill="white"/>
+      </svg>
+      
+  </a>
+  <div class="text-content">
+    <div class="inventory">
+      <div class="grid-container">
+        <div class="c-grid">
+          <div class="achievement-wrapper">
+            <button id="hatBtn" class="achievement-card">
+              <img src = "./img/hat.png" alt="Cowboy Hat" class="achievement-image">
+            </button>
+          </div>
+          </a>
+        </div>
+        </button>
+        <div class="achievement-wrapper">
+          <button id="hoodieBtn" class="achievement-card">
+            <div class="achievement-card">
+              <img src = "./img/hoodie.png" alt="Hackathon Hoodie" class="achievement-image">
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="text-content">
+    <div class="inventory">
+      <div class="grid-container">
+        <div class="c-grid">
+          <div class="achievement-wrapper">
+            <button id="sprigBtn" class="achievement-card">
+              <div class="achievement-card">
+                <img src = "./img/sprig.png" alt="Sprig" class="achievement-image">
+                
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div>
+    </div>
+    <div class="card-container">
+      <h1 class="a-header">
+        Edit your orpheus:
+      </h1>
+      <div class="card">
+        <div class="orpheus">
+          <img id="orph" src="./img/hc summit orph.png" alt="Hackathon Hoodie"  width=400>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <a class="bottom-left-text" href="/achievements" style="text-decoration: none;">
+    <img src = "./img/library_books_FILL0_wght400_GRAD0_opsz24.png" style="display: inline;
+    transform: translate(0px, 35%);" width=50 height=50>
+    <p style="display: inline;">Info</p>
+  </a>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summit Hat</title>
+    <style>
+      @font-face {
+        font-family: "Phantom Sans";
+        src: url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff")
+            format("woff"),
+          url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff2")
+            format("woff2");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Phantom Sans";
+        src: url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff")
+            format("woff"),
+          url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff2")
+            format("woff2");
+        font-weight: normal;
+        font-style: italic;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Phantom Sans";
+        src: url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff")
+            format("woff"),
+          url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff2")
+            format("woff2");
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: #f7f7f7;
+      }
+
+      .a-header {
+        color: #ffff;
+        margin-bottom: 20px;
+        text-align: left;
+        font-family: "Phantom Sans", sans-serif;
+        /* Apply Phantom Sans font */
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+
+      .card {
+        width: 350px;
+        /* Adjusted to take half of the container width */
+        height: 350px;
+        background-color: white;
+        border-radius: 40px;
+        box-shadow: 20px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .text-content {
+        width: 300px;
+        /* Adjusted to take the other half of the container width */
+        padding: 0 100px;
+        /* Padding added for text content */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-image: url("./img/bgimg.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .card-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hoodie img {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 8px;
+      }
+
+      .description {
+        font-size: 14px;
+        color: #ffff;
+        font-size: 1.5rem;
+        font-family: "Phantom Sans", sans-serif;
+        /* Apply Phantom Sans font */
+      }
+
+      .requirement {
+        font-size: 12px;
+        color: #888;
+        margin-top: 12px;
+      }
+
+      .c {
+        font-size: 1.5rem;
+        color: #ffff;
+        font-size: 2rem;
+        font-style: italic;
+        font-weight: 800;
+        font-family: "Phantom Sans", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <a id="backButton" href="/achievements">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="60"
+        viewBox="0 -960 960 960"
+        width="60"
+        style="transform: translate(28px, 0);"
+      >
+        <path
+          d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"
+        />
+      </svg>
+    </a>
+    <div class="container">
+      <div></div>
+      <div class="card-container">
+        <h1 class="a-header">Cowboy Hat</h1>
+        <div class="card">
+          <div class="hoodie">
+            <img src="./img/hat.png" alt="Hackathon Hoodie" />
+          </div>
+        </div>
+      </div>
+
+      <div class="text-content">
+        <div class="description">
+          <p>
+            Howdy, partner! Yeehaw! We reckon you're as sharp as a cactus in a
+            sandbox when it comes to coding, and we're tipping our hats off to
+            you.
+          </p>
+          <p class="c">Achievement: Going to at least 10 hack club meeetings</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
